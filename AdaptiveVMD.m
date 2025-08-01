@@ -16,11 +16,6 @@ end
 if kmax==1 
     imf=x;
     kbest=1;
-  plot(x,'linewidth',2,'color', '#2679F4');
-    title('Original signal (without variational mode decomposition)','FontName','微软雅黑','color', '#333333');
-    set(gca,'FontName','微软雅黑','FontSize',20);
-    set(gca,'box','on','linewidth',1.5);
-    set(gcf,'unit','centimeters','position',[0 0 25 23]);
 else
     Es=sum(x.^2); 
     for i=2: kmax 
@@ -40,7 +35,5 @@ else
     end
     kbest=min(find(MI_c==max(MI_c)));
     imf=vmd(x,'NumIMF' ,kbest);
-    vmd(x,'NumIMF' ,kbest);
-    set(gcf,'unit','centimeters','position',[0 0 25 23]);  
 end
 end

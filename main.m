@@ -1,4 +1,4 @@
-%% clear graph
+%% clear
 clc
 clear
 close all
@@ -8,9 +8,9 @@ close all
 %flag=1:oscillation;flag=0: No oscillation
 
 load('benchmark.mat');
-op=benchmark.chemicals.loop8.OP;
-fs=1/benchmark.chemicals.loop8.Ts;
-flag=benchmark.chemicals.loop8.oscillation;
+op=benchmark.chemicals.loop1.OP;
+fs=1/benchmark.chemicals.loop1.Ts;
+flag=benchmark.chemicals.loop1.oscillation;
 
 % Ensure that the data is n * 1
 [nx,ny]=size(op);
@@ -29,6 +29,5 @@ end
 % delta is the growth rate of the correlation coefficient
 [imf_s,sort,n,delta]=significant_IMFs(imf,op,kbest);
 %% Oscillation probability assessment
-%AD_TABLE is a modal indicator table
 %AD is a modal indicator value
-[AD_TABLE,AD]=Osc(imf_s,n,fs,sort);
+AD=Osc(imf_s,n,fs,sort);

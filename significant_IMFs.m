@@ -29,17 +29,6 @@ if kbest>1
             xuhao(n)=r(i,2);
         end
     end
-    figure
-    edges = [1:1:length(delta)];
-    yyaxis left;bar(edges,delta,1,'EdgeColor','k','Linewidth',1,'FaceColor',[0.2 0.6 0.8]);
-    hold on;
-    plot([0,length(delta)+1],[0.05,0.05],'color', [0 0.447 0.741] ,'linewidth',3)
-    xlim([0,length(delta)+1]);
-    hold on;
-    yyaxis right;plot(RR,'-o','linewidth',2);
-    set(gca,'FontName','微软雅黑','FontSize',24);
-    set(gca,'box','on','linewidth',1.5);
-    set(gcf,'unit','centimeters','position',[0 0 25 18]);
 else
     imf_new=imf;
     xuhao=1;
